@@ -1,0 +1,8 @@
+<h5 class="text-center mt-4">Cadastro de Matrpiculas</h5>
+<form (ngSubmit)="salvar(); formulario.resetForm()" #formulario="ngForm">
+  <div class="form-group mt-4">
+		<label>Aluno</label>
+      <select [(ngModel)]="matricula.aluno" class="form-control" name="aluno" #aluno="ngModel" required >        
+        <option *ngFor="let item of servico.alunos"> {{item.nome}} </option>
+    </select>
+  </div>
