@@ -6,3 +6,51 @@
         <option *ngFor="let item of servico.alunos"> {{item.nome}} </option>
     </select>
   </div>
+
+  <div class="form-group mt-4">
+		<label>DIsciplina</label>
+      <select [(ngModel)]="matricula.disciplina" class="form-control" name="disciplina" #disciplina="ngModel" required >        
+        <option *ngFor="let item of servico.disciplinas"> {{item.nome}} </option>
+    </select>
+  </div>
+
+  <div class="form-group mt-4">
+		<label>Nota</label>
+      <select [(ngModel)]="matricula.nota" class="form-control" name="nota" #nota="ngModel" required >        
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </select>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!formulario.form.valid" class="btn btn-success mr-3">Salvar</button>
+
+    <button type="reset" class="btn btn-light">Limpar</button>
+  </div>
+</form>
+
+<div class="table-responsive-sm mt-4" *ngIf="servico.disciplinas.length > 0">
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+<th scope="col">ALUNO</th>
+<th scope="col">DISCIPLINA</th>
+<th scope="col">NOTA</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let item of servico.matriculas" (contextmenu)="excluir(item)">
+<td>{{item.aluno}}</td>
+<td>{{item.disciplina}}</td>
+<td>{{item.nota}}</td>
+</tr>
+</tbody>
+</table>
+</div>

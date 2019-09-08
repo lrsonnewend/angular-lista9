@@ -9,8 +9,8 @@ import { Matricula } from '../dados';
 })
 export class FormMatriculaComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private servico: ServicoService) { }
+  private matricula: Matricula;
   ngOnInit() {
     this.matricula = new Matricula(); /* cria um novo aluno */
   }
