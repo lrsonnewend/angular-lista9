@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicoService } from '../servicos/servico.service';
+import { DisciplinaService } from '../servicos/disciplina.service';
 import { Disciplina } from '../dados';
 @Component({
   selector: 'app-form-disciplina',
@@ -8,7 +8,7 @@ import { Disciplina } from '../dados';
 })
 export class FormDisciplinaComponent implements OnInit {
   private disciplina: Disciplina;
-  constructor(private servico: ServicoService) { }
+  constructor(private servico: DisciplinaService) { }
   ngOnInit() {
     this.disciplina = new Disciplina(); /* cria um novo aluno */
   }
